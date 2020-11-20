@@ -1,0 +1,13 @@
+# 🚨 Don't change the code below 👇
+age = input("What is your current age?")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+#365 days in a year, 52 weeks in a year and 12 months in a year
+#Inspired by Tim Urban's Life in Weeks
+years = 90 - int(age)
+x_days = int(years)*365
+y_weeks = int(years)*52
+z_months = int(years)*12
+
+print(f"You have {x_days} days, {y_weeks} weeks, and {z_months} months left.")
