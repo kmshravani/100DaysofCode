@@ -1,0 +1,32 @@
+#take a Leap of faith....geddit ? Lol #dadjoke
+
+# 🚨 Don't change the code below 👇
+year = int(input("Which year do you want to check? "))
+# 🚨 Don't change the code above 👆
+
+#First *fork* your copy. Then copy-paste your code below this line 👇
+#Finally click "Run" to execute the tests
+if ((year %4)!= 0):
+  print("Not leap year.")
+elif(((year %4) == 0) and ((year %100) != 0)):
+  print("Leap year.")
+elif(((year %4 )== 0) and ((year %100) == 0) and ((year %400) != 0) ):
+  print("Not leap year.")
+elif(((year %4) == 0) and ((year %100) != 0 )and ((year %400) == 0)):
+  print("Leap year.")
+elif(((year %4) == 0) and ((year %100) == 0 )and ((year %400) == 0)):
+  print("Leap year.")
+
+#Solution 2 
+#Refer to the flow chart here: https://bit.ly/36BjS2D
+
+if year % 4 == 0:
+  if year % 100 == 0:
+    if year % 400 == 0:
+      print("Leap year.")
+    else:
+      print("Not leap year.")
+  else:
+    print("Leap year.")
+else:
+  print("Not leap year.")
