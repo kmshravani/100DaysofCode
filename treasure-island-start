@@ -47,7 +47,7 @@ if(aa=="left"):
 else:
   print("Fall into Hole. GameOver")
   
-#Angela Yu's solution
+#Angela Yu's  solution 
 print("Welcome to Tresure Island.")
 print("Your mission is to find the treasure.")
 choice1 = input('You\'re at a cross road. Where do you want to go? Type "left" or "right" \n').lower()
