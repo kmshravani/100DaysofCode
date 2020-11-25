@@ -36,5 +36,17 @@ for n in student_scores:
     highest = n
 print(f"The highest score in the class is: {highest}")
 
+print("**********")
+a = 0
+for n in range(0,101):
+  if (n % 2 == 0 ):
+    a += n
+print(f"Sum is: {a}")
+print("----")
+total = 0
+for number in range(2, 101, 2):
+  total += number
+print(f"Score is: {total}")
+
 
 
