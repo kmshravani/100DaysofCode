@@ -1,0 +1,21 @@
+#Write your code below this line 👇
+# 1 can of paint can cover 5 square meters of wall
+# number of cans = (wall height ✖ wall width) ÷ coverage per can. 
+# result should be rounded up to 2 cans
+import math
+
+def paint_calc(height, width, cover):  #parameters
+  paint = (test_h*test_w)/cover
+  paint = math.ceil(paint)
+  print(f"You'll need {paint} cans of paint.")
+
+#Write your code above this line 👆
+# Define a function called paint_calc() so that the code below works.   
+
+# 🚨 Don't change the code below 👇
+test_h = int(input("Height of wall: "))  #arguments
+test_w = int(input("Width of wall: "))
+coverage = 5
+paint_calc(height=test_h, width=test_w, cover=coverage)  #keyword arguments
+
+
