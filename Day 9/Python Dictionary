@@ -25,5 +25,28 @@ def add_new_country(user_country,user_visits,user_cities):
 add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
 print(travel_log)
 
+#Question 1
+dict = {
+        "a": 1,
+        "b": 2,
+        "c": 3,
+       }
+ a) dict["c"]=[1,2,3]   #This will change the last key value pair to hold a List. It's valid to have mixed Types in the dictionary's values.
+ b) dict[1]=4 #This will add a new key:value pair ->  1:4
+ c) for key in dict:
+        dict[key]+=1    #This will add 1 to each of the values in the dictionary.
+ d) print(dict[1])     #There is no key that matches 1, this will give you a KeyError.
+ 
+ #Question 2
+ 
+ order = {
+    "starter": {1: "Salad", 2: "Soup"},
+    "main": {
+        1: ["Burger", "Fries"],
+        2: ["Steak"]
+        },
+    "dessert": {1: ["Ice Cream"], 2: []},
+    }   #PRINT STEAK 
+print(order["main"][2][0]) #[2] accesses the value with key 2, [0] gets the first item from the list. 
 
 
