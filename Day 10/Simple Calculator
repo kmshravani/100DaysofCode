@@ -1,0 +1,30 @@
+
+#Calculator
+def add(n1,n2):
+  return n1+n2
+def subtract(n1,n2):
+  return n1-n2
+def multi(n1,n2):
+  return n1*n2
+def div(n1,n2):
+  return n1/n2
+
+operations = {
+  "+" : add, 
+  "-" : subtract,
+  "*" : multi,
+  "/" : div,
+}
+
+a = int(input("First input: "))
+b = int(input("Second input: "))
+for i in operations:
+  print(i)
+
+c = input("Wnich operation  add sub mul div? :")
+
+
+calc_func = operations[c]
+answer = calc_func(a,b)
+
+print(f"{a} {c} {b} = {answer}")
