@@ -1,0 +1,100 @@
+################### Scope ####################
+
+enemies = 1
+
+def increase_enemies():
+  enemies = 2
+  print(f"enemies inside function: {enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+i = 50
+def foo():
+  i = 100
+  return i
+     
+foo()
+print(i)
+# #The print statement is outside the function foo(). So it can't access the local variable i = 100. It only sees the global i, which is equal to 50.
+
+def bar():
+  my_variable = 9
+  
+  if 16 > 9:
+    my_variable = 16
+  print(my_variable)
+
+bar()
+# #Remember that in Python there is no block scope. Inside a if/else/for/while code block is the same as outside it. 
+#print(16>9)
+
+def a_function(a_parameter):
+  a_variable = 15
+  return a_parameter
+     
+a_function(10)
+print(a_variable)
+#It's trying to print a variable that is local to a_function() and is only available inside the function.
+
+################### Scope ####################
+
+enemies = 1
+
+def increase_enemies():
+    enemies = 2
+    print(f"enemies inside function: {enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+# Local Scope
+
+def drink_potion():
+    potion_strength = 2
+    print(potion_strength)
+
+drink_potion()
+print(potion_strength)
+
+# Global Scope
+player_health = 10
+
+def game():
+    def drink_potion():
+        potion_strength = 2
+        print(player_health)
+
+    drink_potion()
+
+print(player_health)
+
+# There is no Block Scope
+
+game_level = 3
+
+def create_enemy():
+    enemies = ["Skeleton", "Zombie", "Alien"]
+    if game_level < 5:
+        new_enemy = enemies[0]
+
+    print(new_enemy)
+
+
+# Modifying Global Scope
+
+enemies = 1
+
+def increase_enemies():
+    print(f"enemies inside function: {enemies}")
+    return enemies + 1
+
+enemies = increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+#Global Constants
+
+PI = 3.14159
+URL = "https://www.google.com"
+TWITTER_HANDLE = "@yu_angela"
+
