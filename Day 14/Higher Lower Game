@@ -1,0 +1,7 @@
+import art as ar
+
+print(ar.logo)
+
+print("Select A")
+print(ar.vs)
+print("Select B")
