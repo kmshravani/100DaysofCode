@@ -55,10 +55,4 @@ while (isTrue):
             print(f"Your score: {score}")
             isTrue
 
-        # 'name': 'Instagram',
-        # 'follower_count': 346,
-        # 'description': 'Social media platform',
-        # 'country': 'United States'
-        # {i['follower_count']}
-        # {j['follower_count']},
 
