@@ -1,7 +1,64 @@
 import art as ar
+import game_data
+import random
 
 print(ar.logo)
 
-print("Select A")
-print(ar.vs)
-print("Select B")
+i = random.choice(game_data.data)
+j = random.choice(game_data.data)
+k = random.choice(game_data.data)
+
+isTrue = True
+while (isTrue):
+    score = 0
+
+    def decide_who_has_more():
+        if (i['follower_count'] > j['follower_count']):
+            print(f"More followers for {i['name']}")
+            #i['follower_count'] = i['follower_count']
+            j['follower_count'] = k['follower_count']
+        elif (j['follower_count'] > i['follower_count']):
+            print(f"More followers for {j['name']}")
+            i['follower_count'] = j['follower_count']
+            j['follower_count'] = k['follower_count']
+
+    print(f"A : {i['name']},a {i['description']}, from {i['country']} ")
+    print(ar.vs)
+    print(f"B : {j['name']},a {j['description']},from {j['country']} \n\n")
+    '''for me'''
+    print(f"Psst Ans: {i['follower_count']}, {j['follower_count']}\n\n ")
+  
+    user_input = input("Choose A or B : ").lower()
+    if (user_input == 'a'):
+        if (i['follower_count'] > j['follower_count']):
+            print(f" A is right answer")
+            decide_who_has_more()
+            score = score + 1
+            print(f"Your score: {score}")
+            #i['follower_count'] = i['follower_count']
+            j['follower_count'] = k['follower_count']
+            
+
+        else:
+            print("A was not right answer!")
+            print(f"Your score: {score}")
+            isTrue = False
+
+    elif (user_input == 'b'):
+        if (j['follower_count'] > i['follower_count']):
+            print(f" B is right answer")
+            decide_who_has_more()
+            score = score + 1
+            print(f"Your score: {score}")
+        else:
+            print("B was not right answer!")
+            print(f"Your score: {score}")
+            isTrue
+
+        # 'name': 'Instagram',
+        # 'follower_count': 346,
+        # 'description': 'Social media platform',
+        # 'country': 'United States'
+        # {i['follower_count']}
+        # {j['follower_count']},
+
