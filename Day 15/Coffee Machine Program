@@ -33,16 +33,87 @@ print(type(resources))
 isOn = True
 
 # TODO: 1 Prompt User what coffee ?while
-while(isOn): #end this isOn = False
-    #clear screeen command
-    user_choice = input("Hi. What would you like? (espresso/latte/cappuccino): ").lower()
+'''while(isOn): #end this isOn = False
+clear screen command
+isOn = False'''
+
 
 # TODO: 1.1 Check the user’s input to decide what to do next.
 # TODO: 1.2 The prompt should show again to serve the next customer.
 # TODO: 2 Turn off the Coffee Machine by entering “off” to the prompt.while
-isOn = False
 
-#TODO 3: Report for user
+
+#TODO 3: Report for user - money
 def report():
     print("Here is current resource values - ")
-    print(f"Water: {} \n Milk: {} \n Coffee: {} \n Money: {} \n")
+    print(f"Water: {resources['water']} \n Milk: {resources['milk']} \n Coffee: {resources['coffee']} \n Money: money")
+    print("End of Report")
+
+
+#TODO 4.a: When user chooses a drink, check if enough resources available?
+#TODO 5.a : If enough resources then prompt for - insert coins
+#TODO 5.b : Calculate monetary val - def
+
+def check_resources_avail(userChoice):
+    userChoice = user_choice
+    if(userChoice == 'e'):
+        a1 = MENU['espresso']['ingredients']['water']
+        b1 = MENU['espresso']['ingredients']['coffee']
+        if(a1>=50) :
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough water")
+        # if(MENU['espresso']['ingredients']['milk']) <
+        if(b1 >= 18):
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough coffee")
+    elif(userChoice == 'l'):
+        a2 = MENU['latte']['ingredients']['water']
+        b2 = MENU['latte']['ingredients']['milk']
+        c2 = MENU['latte']['ingredients']['coffee']
+        if (a2 >= 200) :
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough water")
+        if(b2 >= 150):
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough milk")
+        if (c2 >= 24):
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough coffee")
+    elif(userChoice == 'c'):
+        a3 = MENU['cappuccino']['ingredients']['water']
+        b3 = MENU['cappuccino']['ingredients']['milk']
+        c3 = MENU['cappuccino']['ingredients']['coffee']
+        if (a3 >= 200):
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough water")
+        if(b3 >= 150):
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough milk")
+        if (c3 >= 24):
+            print("Please insert coins. Coffee will be ready soon.\n")
+        else:
+            print("Sorry there is not enough coffee")
+
+
+user_choice = input("Hi. What would you like? (espresso/latte/cappuccino) \n Please type 'e' or 'l' or 'c' : ").lower()
+check_resources_avail(user_choice)
+'''Monetary 
+quarters = 0.25, dimes = 0.10, nickles = 0.05, pennies = 0.01
+'''
+def monetary():
+    
+
+
+
+
+
+
+
+
