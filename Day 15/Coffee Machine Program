@@ -50,65 +50,95 @@ def report():
     print("End of Report")
 
 
-#TODO 4.a: When user chooses a drink, check if enough resources available?
-#TODO 5.a : If enough resources then prompt for - insert coins
-#TODO 5.b : Calculate monetary val - def
+#TODO 4.a: When user chooses a drink, check if enough resources available?-done
+#TODO 5.a : If enough resources then prompt for - insert coins-done
+#TODO 5.b : Calculate monetary val - def - done
+total = 0
+
+
+def monetary():
+    '''Monetary
+    quarters = 0.25, dimes = 0.10, nickles = 0.05, pennies = 0.01
+    '''
+
+    print("Please insert coins. Coffee will be ready soon.\n")
+    total = int(input("how many quarters?: ")) * 0.25
+    total += int(input("how many dimes?: ")) * 0.1
+    total += int(input("how many nickles?: ")) * 0.05
+    total += int(input("how many pennies?: ")) * 0.01
+    print(f"Your total is: {total}")
+
 
 def check_resources_avail(userChoice):
     userChoice = user_choice
     if(userChoice == 'e'):
         a1 = MENU['espresso']['ingredients']['water']
         b1 = MENU['espresso']['ingredients']['coffee']
-        if(a1>=50) :
-            print("Please insert coins. Coffee will be ready soon.\n")
+        if(a1<50) :
+            if(b1<18):
+                print("Sorry there is not enough {}")
+                return False
         else:
-            print("Sorry there is not enough water")
+            monetary()
+            return True
         # if(MENU['espresso']['ingredients']['milk']) <
-        if(b1 >= 18):
-            print("Please insert coins. Coffee will be ready soon.\n")
-        else:
-            print("Sorry there is not enough coffee")
+        # if():
+        #     print("Sorry there is not enough coffee")
+        #     return False
+
     elif(userChoice == 'l'):
         a2 = MENU['latte']['ingredients']['water']
         b2 = MENU['latte']['ingredients']['milk']
         c2 = MENU['latte']['ingredients']['coffee']
         if (a2 >= 200) :
-            print("Please insert coins. Coffee will be ready soon.\n")
+            if (b2 >= 150) :
+                if (c2 >= 24) :
+                    print("Sorry there is not enough {}")
+                    return False
         else:
-            print("Sorry there is not enough water")
-        if(b2 >= 150):
-            print("Please insert coins. Coffee will be ready soon.\n")
-        else:
-            print("Sorry there is not enough milk")
-        if (c2 >= 24):
-            print("Please insert coins. Coffee will be ready soon.\n")
-        else:
-            print("Sorry there is not enough coffee")
+            monetary()
+            inserted_money()
+            return True
     elif(userChoice == 'c'):
         a3 = MENU['cappuccino']['ingredients']['water']
         b3 = MENU['cappuccino']['ingredients']['milk']
         c3 = MENU['cappuccino']['ingredients']['coffee']
         if (a3 >= 200):
-            print("Please insert coins. Coffee will be ready soon.\n")
-        else:
-            print("Sorry there is not enough water")
-        if(b3 >= 150):
-            print("Please insert coins. Coffee will be ready soon.\n")
-        else:
-            print("Sorry there is not enough milk")
-        if (c3 >= 24):
-            print("Please insert coins. Coffee will be ready soon.\n")
-        else:
-            print("Sorry there is not enough coffee")
+            if (b3 >= 150) :
+                if (c3 >= 24) :
+                    print("Sorry there is not enough {}")
+                    return False
+        else :
+            monetary()
+            return True
 
 
 user_choice = input("Hi. What would you like? (espresso/latte/cappuccino) \n Please type 'e' or 'l' or 'c' : ").lower()
 check_resources_avail(user_choice)
-'''Monetary 
-quarters = 0.25, dimes = 0.10, nickles = 0.05, pennies = 0.01
-'''
-def monetary():
-    
+
+# TODO 6: a.	Check that the user has inserted enough money to purchase the drink they selected
+def inserted_money():
+    totalMoney = total
+    if user_choice == e :
+        if totalMoney == 1.5:
+            print("Thanks for paying right amount for an espresso.")
+        else:
+            print("Sorry that's not enough money for an espresso. {Money refunded}}")
+    if user_choice == l :
+        if totalMoney == 2.5 :
+            print("Thanks for paying right amount for a latte.")
+        else :
+            print("Sorry that's not enough money for a latte. {Money refunded}}")
+    if user_choice == c :
+        if totalMoney == 2.5 :
+            print("Thanks for paying right amount for a cappuccino.")
+        else :
+            print("Sorry that's not enough money for a cappuccino. {Money refunded}}")
+
+
+
+
+
 
 
 
